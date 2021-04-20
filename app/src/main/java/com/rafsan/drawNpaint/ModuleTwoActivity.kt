@@ -5,17 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.rafsan.drawnPaint.R
-import com.rafsan.drawnPaint.databinding.ActivityMainBinding
 import com.rafsan.drawNpaint.utilities.DrawingFlags
-class MainActivity : AppCompatActivity(){
-    lateinit var binding: ActivityMainBinding
-    var canvasWidth = 0
-    var canvasHeight = 0
+import com.rafsan.drawnPaint.databinding.ActivityModuleTwoBinding
+
+class ModuleTwoActivity : AppCompatActivity(){
+    lateinit var binding: ActivityModuleTwoBinding
+    /*var canvasWidth = 0
+    var canvasHeight = 0*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        setContentView(R.layout.activity_module_two)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_module_two)
         manageColorClicks()
        // manageDraw()
 

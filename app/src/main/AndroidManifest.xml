@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rnds">
+        <activity android:name="com.rafsan.drawNpaint.ModuleOneActivity"></activity>
+        <activity android:name="com.rafsan.drawNpaint.ModuleTwoActivity" />
         <activity
-            android:name="com.rafsan.drawNpaint.MainActivity"
+            android:name="com.rafsan.drawNpaint.InitActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
