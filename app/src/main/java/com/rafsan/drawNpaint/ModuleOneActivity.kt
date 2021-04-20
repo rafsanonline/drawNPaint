@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
+import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -23,6 +25,7 @@ class ModuleOneActivity : AppCompatActivity() {
 
         progressValue.observe(this, Observer {
             Log.i("LOTTIE_VALUE",it.toString())
+            binding.scoreText.text = "Score: $it"
             if (it == 5) {
                 binding.lottieAnimationView.progress = "0.0$it".toFloat()
             }
@@ -41,9 +44,12 @@ class ModuleOneActivity : AppCompatActivity() {
         when(event?.action) {
             MotionEvent.ACTION_DOWN -> {
                 if (progressValueInit<=70) {
+                    binding.levelUpText.visibility = View.GONE
                     progressValueInit += 5
                     progressValue.value = progressValueInit
                 } else {
+                    binding.levelUpText.visibility = View.VISIBLE
+                    binding.scoreText.text = "Score: 0"
                     progressValueInit = 0
                     progressValue.value = progressValueInit
                 }
